@@ -11,6 +11,7 @@ License:        MIT
 Group:          Graphical desktop/Other
 URL:            http://www.useperl.ru/ipager
 Source0:        http://www.useperl.ru/ipager/src/%name-%version.tar.bz2
+BuildRoot:      %_tmppath/%name-buildroot
 BuildRequires:	scons
 BuildRequires:  imlib2-devel
 BuildRequires:  X11-devel
