@@ -1,6 +1,6 @@
 %define name    ipager
 %define version 1.1.0
-%define release %mkrel 2
+%define release %mkrel 3
 %define Summary IPager : a pager for *WM
 
 Summary:        %Summary
