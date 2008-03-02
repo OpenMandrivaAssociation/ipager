@@ -12,6 +12,7 @@ Group:          Graphical desktop/Other
 URL:            http://www.useperl.ru/ipager
 Source0:        http://www.useperl.ru/ipager/src/%name-%version.tar.bz2
 BuildRoot:      %_tmppath/%name-buildroot
+Patch0:         ipager-1.1.0-sconstruct.diff
 BuildRequires:	scons
 BuildRequires:  imlib2-devel
 BuildRequires:  X11-devel
@@ -41,8 +42,8 @@ desktop.
 
 %prep
 %{__rm} -rf $RPM_BUILD_ROOT
-%setup
-
+%setup -q
+%patch -p0
 %build
 scons
 
