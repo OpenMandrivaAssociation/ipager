@@ -12,7 +12,9 @@ Group:          Graphical desktop/Other
 URL:            http://www.useperl.ru/ipager
 Source0:        http://www.useperl.ru/ipager/src/%name-%version.tar.bz2
 BuildRoot:      %_tmppath/%name-buildroot
-Patch0:         ipager-1.1.0-sconstruct.diff
+Patch1:		ipager-1.1.0-gcc43.patch
+Patch2:		ipager-1.1.0-scons_flags.patch
+Patch3:		ipager-1.1.0-scons_imlib2.patch
 BuildRequires:	scons
 BuildRequires:  imlib2-devel
 BuildRequires:  X11-devel
@@ -41,15 +43,20 @@ A range of various color themes allows you to easily integrate IPager into your
 desktop.
 
 %prep
-%{__rm} -rf $RPM_BUILD_ROOT
 %setup -q
-%patch -p0
+%patch1 -p0
+%patch2 -p1
+%patch3 -p1
+
 %build
-scons
+%setup_compile_flags
+scons PREFIX=%_prefix
 
 %install
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}
-scons PREFIX=$RPM_BUILD_ROOT/usr install
+rm -fr %buildroot
+mkdir -p %buildroot
+%setup_compile_flags
+scons PREFIX=%_prefix DESTDIR=%buildroot install
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
