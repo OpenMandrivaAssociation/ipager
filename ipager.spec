@@ -15,9 +15,10 @@ BuildRoot:      %_tmppath/%name-buildroot
 Patch1:		ipager-1.1.0-gcc43.patch
 Patch2:		ipager-1.1.0-scons_flags.patch
 Patch3:		ipager-1.1.0-scons_imlib2.patch
+Patch4:		ipager-1.1.0-link.patch
 BuildRequires:	scons
 BuildRequires:  imlib2-devel
-BuildRequires:  X11-devel
+BuildRequires:  libx11-devel
 
 %description
 IPager is a pager!
@@ -47,6 +48,7 @@ desktop.
 %patch1 -p0
 %patch2 -p1
 %patch3 -p1
+%patch4 -p0
 
 %build
 %setup_compile_flags
