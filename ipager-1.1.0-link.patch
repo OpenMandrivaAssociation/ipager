@@ -1,0 +1,11 @@
+--- SConstruct.link	2010-02-18 11:28:37.000000000 +0100
++++ SConstruct	2010-02-18 11:28:50.000000000 +0100
+@@ -98,7 +98,7 @@
+ # x11
+ if conf.CheckLibWithHeader('X11', 'X11/Xlib.h', 'C', 'XOpenDisplay(0);', 1):
+     ipager_env.AppendUnique(
+-        LIBS = ['X11','Xmu','Xext'])
++        LIBS = ['X11'])
+ else:
+     print "missing x11-dev-stuff, install it."
+     exit(1)
