@@ -9,7 +9,7 @@ Version:        %version
 Release:        %release
 License:        MIT
 Group:          Graphical desktop/Other
-URL:            http://www.useperl.ru/ipager
+URL:            https://www.useperl.ru/ipager
 Source0:        http://www.useperl.ru/ipager/src/%name-%version.tar.bz2
 BuildRoot:      %_tmppath/%name-buildroot
 Patch1:		ipager-1.1.0-gcc43.patch
